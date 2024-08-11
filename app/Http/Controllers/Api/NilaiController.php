@@ -72,7 +72,7 @@ class NilaiController extends Controller
    ->orderBy('total', 'DESC')
    ->get();
 
-   // Restructure the result to match the desired JSON format
+   //menyusun ulang hasilnya agar sesuai dengan format JSON 
    $formattedResult = $result->map(function ($item, $index) {
    return [
    'nomor' => $index + 1, 
