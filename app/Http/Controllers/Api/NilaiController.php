@@ -84,7 +84,7 @@ class NilaiController extends Controller
    'figural' => $item->figural, 
    ],
    'nisn' => $item->nisn,
-   'total' => $item->total, // 8. Total
+   'total' => $item->total, 
    ];
    });
 
