@@ -75,15 +75,15 @@ class NilaiController extends Controller
    // Restructure the result to match the desired JSON format
    $formattedResult = $result->map(function ($item, $index) {
    return [
-   'nomor' => $index + 1, // 1. Nomor urut siswa
-   'nama' => $item->nama, // 2. Nama Siswa
-   'nisn' => $item->nisn, // 3. NISN Siswa
+   'nomor' => $index + 1, 
+   'nama' => $item->nama, 
    'listNilai' => [
-   'verbal' => $item->verbal, // 4. Verbal
-   'kuantitatif' => $item->kuantitatif, // 5. Kuantitatif
-   'penalaran' => $item->penalaran, // 6. Penalaran
-   'figural' => $item->figural, // 7. Figural
+   'verbal' => $item->verbal, 
+   'kuantitatif' => $item->kuantitatif,
+   'penalaran' => $item->penalaran, 
+   'figural' => $item->figural, 
    ],
+   'nisn' => $item->nisn,
    'total' => $item->total, // 8. Total
    ];
    });
