@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "76e23a48-6d23-462e-96c9-c3a63a40a67d",
+		"name": "Technical Test - BackEnd(sql) -MSIB7",
+		"description": "Tes masuk magang Backend Developer di PT Aksamedia Mulia Digital dirancang untuk mengevaluasi pemahaman dan kemampuan Anda dalam membuat api serta mengukur pemahaman anda terhadap sql. Tes ini juga akan mengevaluasi kemampuan logika anda dalam menyelesaikan masalah.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33238607"
+	},
+	"item": [
+		{
+			"name": "nilaiRT",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tessql.muhsalfazi.my.id/api/nilaiRT",
+					"protocol": "https",
+					"host": [
+						"tessql",
+						"muhsalfazi",
+						"my",
+						"id"
+					],
+					"path": [
+						"api",
+						"nilaiRT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nilaiST",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tessql.muhsalfazi.my.id/api/nilaiST",
+					"protocol": "https",
+					"host": [
+						"tessql",
+						"muhsalfazi",
+						"my",
+						"id"
+					],
+					"path": [
+						"api",
+						"nilaiST"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
