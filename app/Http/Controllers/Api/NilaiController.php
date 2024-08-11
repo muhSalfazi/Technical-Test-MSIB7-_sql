@@ -47,47 +47,48 @@ class NilaiController extends Controller
         return response()->json($groupedResults->values());
     }
 
-    public function nilaiST()
-    {
-        $result = DB::table('nilai')
-            ->select(
-                'nama',
-                'nisn',
-                DB::raw('SUM(CASE WHEN pelajaran_id = 44 THEN skor * 41.67 ELSE 0 END) AS verbal'),
-                DB::raw('SUM(CASE WHEN pelajaran_id = 45 THEN skor * 29.67 ELSE 0 END) AS kuantitatif'),
-                DB::raw('SUM(CASE WHEN pelajaran_id = 46 THEN skor * 100 ELSE 0 END) AS penalaran'),
-                DB::raw('SUM(CASE WHEN pelajaran_id = 47 THEN skor * 23.81 ELSE 0 END) AS figural'),
-                DB::raw('
-                    SUM(CASE
-                        WHEN pelajaran_id = 44 THEN skor * 41.67
-                        WHEN pelajaran_id = 45 THEN skor * 29.67
-                        WHEN pelajaran_id = 46 THEN skor * 100
-                        WHEN pelajaran_id = 47 THEN skor * 23.81
-                        ELSE 0
-                    END
-                ) AS total')
-            )
-            ->where('materi_uji_id', 4)
-            ->groupBy('nisn', 'nama')
-            ->orderBy('total', 'DESC')
-            ->get();
+   public function nilaiST()
+   {
+   $result = DB::table('nilai')
+   ->select(
+   'nama',
+   'nisn',
+   DB::raw('SUM(CASE WHEN pelajaran_id = 44 THEN skor * 41.67 ELSE 0 END) AS verbal'),
+   DB::raw('SUM(CASE WHEN pelajaran_id = 45 THEN skor * 29.67 ELSE 0 END) AS kuantitatif'),
+   DB::raw('SUM(CASE WHEN pelajaran_id = 46 THEN skor * 100 ELSE 0 END) AS penalaran'),
+   DB::raw('SUM(CASE WHEN pelajaran_id = 47 THEN skor * 23.81 ELSE 0 END) AS figural'),
+   DB::raw('
+   SUM(CASE
+   WHEN pelajaran_id = 44 THEN skor * 41.67
+   WHEN pelajaran_id = 45 THEN skor * 29.67
+   WHEN pelajaran_id = 46 THEN skor * 100
+   WHEN pelajaran_id = 47 THEN skor * 23.81
+   ELSE 0
+   END
+   ) AS total')
+   )
+   ->where('materi_uji_id', 4)
+   ->groupBy('nisn', 'nama')
+   ->orderBy('total', 'DESC')
+   ->get();
 
-        // Restructure the result to match the desired JSON format
-        $formattedResult = $result->map(function ($item, $index) {
-            return [
-                'nomor' => $index + 1, // 1. Nomor urut siswa
-                'nama' => $item->nama, // 2. Nama Siswa
-                'nisn' => $item->nisn, // 3. NISN Siswa
-                'listNilai' => [
-                    'verbal' => $item->verbal, // 4. Verbal
-                    'kuantitatif' => $item->kuantitatif, // 5. Kuantitatif
-                    'penalaran' => $item->penalaran, // 6. Penalaran
-                    'figural' => $item->figural, // 7. Figural
-                ],
-                'total' => $item->total, // 8. Total
-            ];
-        });
+   // Restructure the result to match the desired JSON format
+   $formattedResult = $result->map(function ($item, $index) {
+   return [
+   'nomor' => $index + 1, // 1. Nomor urut siswa
+   'nama' => $item->nama, // 2. Nama Siswa
+   'nisn' => $item->nisn, // 3. NISN Siswa
+   'listNilai' => [
+   'verbal' => $item->verbal, // 4. Verbal
+   'kuantitatif' => $item->kuantitatif, // 5. Kuantitatif
+   'penalaran' => $item->penalaran, // 6. Penalaran
+   'figural' => $item->figural, // 7. Figural
+   ],
+   'total' => $item->total, // 8. Total
+   ];
+   });
 
-        return response()->json($formattedResult);
-    }
+   return response()->json($formattedResult);
+   }
+
 }
