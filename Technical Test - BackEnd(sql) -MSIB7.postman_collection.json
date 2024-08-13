@@ -1,51 +1,341 @@
 {
 	"info": {
-		"_postman_id": "76e23a48-6d23-462e-96c9-c3a63a40a67d",
-		"name": "Technical Test - BackEnd(sql) -MSIB7",
-		"description": "Tes masuk magang Backend Developer di PT Aksamedia Mulia Digital dirancang untuk mengevaluasi pemahaman dan kemampuan Anda dalam membuat api serta mengukur pemahaman anda terhadap sql. Tes ini juga akan mengevaluasi kemampuan logika anda dalam menyelesaikan masalah.",
+		"_postman_id": "a5e593e8-2592-4c03-9937-69638a627025",
+		"name": "Technical Test - MSIB Batch 7",
+		"description": "Tes masuk magang Backend Developer di PT Aksamedia Mulia Digital dirancang untuk mengevaluasi pemahaman dan kemampuan Saya dalam membuat api.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33238607"
 	},
 	"item": [
 		{
-			"name": "nilaiRT",
+			"name": "Devisi",
+			"item": [
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21zaWIwNy5tdWhzYWxmYXppLm15LmlkL2FwaS9sb2dpbiIsImlhdCI6MTcyMzUzODI0NCwiZXhwIjoxNzIzNTQxODQ0LCJuYmYiOjE3MjM1MzgyNDQsImp0aSI6InVxeVp1UHZhbVdhdG9wc2QiLCJzdWIiOiI5MzBjNWIyMC0yMmQ1LTQwZGMtYWIzNS1lY2RlNTMyYjdiNTEiLCJwcnYiOiJkZjg4M2RiOTdiZDA1ZWY4ZmY4NTA4MmQ2ODZjNDVlODMyZTU5M2E5In0.X3mIinYr_3URK55AJE5ZwxeNaMy79l3VTDhZ252BQxY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://msib07.muhsalfazi.my.id/api/divisions?name=QA",
+							"protocol": "https",
+							"host": [
+								"msib07",
+								"muhsalfazi",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"divisions"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "QA"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pegawai",
+			"item": [
+				{
+					"name": "showdata",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21zaWIwNy5tdWhzYWxmYXppLm15LmlkL2FwaS9sb2dpbiIsImlhdCI6MTcyMzUzNjEzNywiZXhwIjoxNzIzNTM5NzM3LCJuYmYiOjE3MjM1MzYxMzcsImp0aSI6IlI3WTdzN25jSW05MlpHRGYiLCJzdWIiOiI5MzBjNWIyMC0yMmQ1LTQwZGMtYWIzNS1lY2RlNTMyYjdiNTEiLCJwcnYiOiJkZjg4M2RiOTdiZDA1ZWY4ZmY4NTA4MmQ2ODZjNDVlODMyZTU5M2E5In0.ZOzopM97L3ZfQXpAZXr9t69SBmaKR5XVUhJ7umfDlDo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://msib07.muhsalfazi.my.id/api/employees?name=salman fauzi&division_id=51072277-434c-4cae-a042-63d4e379d8f8",
+							"protocol": "https",
+							"host": [
+								"msib07",
+								"muhsalfazi",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "salman fauzi"
+								},
+								{
+									"key": "division_id",
+									"value": "51072277-434c-4cae-a042-63d4e379d8f8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21zaWIwNy5tdWhzYWxmYXppLm15LmlkL2FwaS9sb2dpbiIsImlhdCI6MTcyMzUzNzI5NSwiZXhwIjoxNzIzNTQwODk1LCJuYmYiOjE3MjM1MzcyOTUsImp0aSI6IkI4ZFdpTWxWeldpenJRVGMiLCJzdWIiOiI5MzBjNWIyMC0yMmQ1LTQwZGMtYWIzNS1lY2RlNTMyYjdiNTEiLCJwcnYiOiJkZjg4M2RiOTdiZDA1ZWY4ZmY4NTA4MmQ2ODZjNDVlODMyZTU5M2E5In0.EQ7lOFTYtOosXc7bbck-V-vxrpwxrf6eoeX4XDwXZn8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/salma/OneDrive/Gambar/foto-me/foto-me-compres.png",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "salman",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "899021",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "division_id",
+									"value": "51072277-434c-4cae-a042-63d4e379d8f8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "position",
+									"value": "magang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://msib07.muhsalfazi.my.id/api/employees",
+							"protocol": "https",
+							"host": [
+								"msib07",
+								"muhsalfazi",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21zaWIwNy5tdWhzYWxmYXppLm15LmlkL2FwaS9sb2dpbiIsImlhdCI6MTcyMzUzNzI5NSwiZXhwIjoxNzIzNTQwODk1LCJuYmYiOjE3MjM1MzcyOTUsImp0aSI6IkI4ZFdpTWxWeldpenJRVGMiLCJzdWIiOiI5MzBjNWIyMC0yMmQ1LTQwZGMtYWIzNS1lY2RlNTMyYjdiNTEiLCJwcnYiOiJkZjg4M2RiOTdiZDA1ZWY4ZmY4NTA4MmQ2ODZjNDVlODMyZTU5M2E5In0.EQ7lOFTYtOosXc7bbck-V-vxrpwxrf6eoeX4XDwXZn8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/salma/OneDrive/Gambar/foto-me/IMG_20240204_110746_794.jpg",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "salman fauzi",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "899021",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "division_id",
+									"value": "51072277-434c-4cae-a042-63d4e379d8f8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "position",
+									"value": "magang",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://msib07.muhsalfazi.my.id/api/employees/6cfd4b9b-15cd-4a0b-ba20-0c7456f6f38a",
+							"protocol": "https",
+							"host": [
+								"msib07",
+								"muhsalfazi",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"employees",
+								"6cfd4b9b-15cd-4a0b-ba20-0c7456f6f38a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzIzMzIwNjAzLCJleHAiOjE3MjMzMjQyMDMsIm5iZiI6MTcyMzMyMDYwMywianRpIjoicGVuVEZVSkZCVjhlR3I3TCIsInN1YiI6IjA4YTNmYTExLTIzOGYtNGVhZi1hMDNiLTZjM2E4ZTg3MWZmOCIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.5VgFOq73xGaGsL18zFdb-qqKMoT2sLs42SwCYqcCGd0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://msib07.muhsalfazi.my.id/api/employees/d1a6e19f-609f-478d-900a-5a57990ecd5c",
+							"protocol": "https",
+							"host": [
+								"msib07",
+								"muhsalfazi",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"employees",
+								"d1a6e19f-609f-478d-900a-5a57990ecd5c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"pastibisa\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "https://tessql.muhsalfazi.my.id/api/nilaiRT",
+					"raw": "https://msib07.muhsalfazi.my.id/api/login",
 					"protocol": "https",
 					"host": [
-						"tessql",
+						"msib07",
 						"muhsalfazi",
 						"my",
 						"id"
 					],
 					"path": [
 						"api",
-						"nilaiRT"
+						"login"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "nilaiST",
+			"name": "logout",
 			"request": {
-				"method": "GET",
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzIzMzIyNjU4LCJleHAiOjE3MjMzMjYyNTgsIm5iZiI6MTcyMzMyMjY1OCwianRpIjoiV2RJSTk5VHF0emFCNDI0byIsInN1YiI6ImY4ZDQwOTM0LTc0MjctNDA0MC05ODUxLTY5NzgyMDdmMjlkZiIsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.HoTQEWaYnAg_4fdO6iWCjQ0WCySCi7VsJH9pNB0d5tA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://tessql.muhsalfazi.my.id/api/nilaiST",
+					"raw": "https://msib07.muhsalfazi.my.id/api/logout",
 					"protocol": "https",
 					"host": [
-						"tessql",
+						"msib07",
 						"muhsalfazi",
 						"my",
 						"id"
 					],
 					"path": [
 						"api",
-						"nilaiST"
+						"logout"
 					]
 				}
 			},
